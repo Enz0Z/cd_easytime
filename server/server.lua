@@ -54,7 +54,7 @@ RegisterCommand(Config.Command.OpenUI, function(source)
     else
         Notification(_source, 3, L('invalid_permissions'))
     end
-end)
+end, Config.Framework == 'aceperms')
 
 RegisterServerEvent('cd_easytime:SyncMe')
 AddEventHandler('cd_easytime:SyncMe', function(instant)
