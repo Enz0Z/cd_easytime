@@ -1,7 +1,7 @@
 --███████╗██████╗  █████╗ ███╗   ███╗███████╗██╗    ██╗ ██████╗ ██████╗ ██╗  ██╗
 --██╔════╝██╔══██╗██╔══██╗████╗ ████║██╔════╝██║    ██║██╔═══██╗██╔══██╗██║ ██╔╝
---█████╗  ██████╔╝███████║██╔████╔██║█████╗  ██║ █╗ ██║██║   ██║██████╔╝█████╔╝ 
---██╔══╝  ██╔══██╗██╔══██║██║╚██╔╝██║██╔══╝  ██║███╗██║██║   ██║██╔══██╗██╔═██╗ 
+--█████╗  ██████╔╝███████║██╔████╔██║█████╗  ██║ █╗ ██║██║   ██║██████╔╝█████╔╝
+--██╔══╝  ██╔══██╗██╔══██║██║╚██╔╝██║██╔══╝  ██║███╗██║██║   ██║██╔══██╗██╔═██╗
 --██║     ██║  ██║██║  ██║██║ ╚═╝ ██║███████╗╚███╔███╔╝╚██████╔╝██║  ██║██║  ██╗
 --╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝ ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
 
@@ -190,14 +190,14 @@ Citizen.CreateThread(function()
                         TimesChanged = 0
                         LastWeatherTable = nil
                         LastWeatherTable = {}
-                    end 
+                    end
                     LastGroup = Group
                 end
             end
         end
     end
 end)
-     
+
 function ChooseWeatherType()
     local result = math.random(1,#Config.WeatherGroups)
     if result == 2 then
@@ -236,7 +236,7 @@ function ChooseWeatherType()
         end
     else
         return Config.WeatherGroups[result]
-    end 
+    end
 end
 
 RegisterServerEvent('cd_easytime:ToggleInstantChange:Time')
@@ -282,7 +282,7 @@ AddEventHandler('cd_easytime:StartTsunamiCountdown', function(boolean)
 end)
 
 function PermissionsCheck(source)
-    if Config.Framework == 'esx' then 
+    if Config.Framework == 'esx' then
         local xPlayer = ESX.GetPlayerFromId(source)
         local perms = xPlayer.getGroup()
         for c, d in ipairs(Config.Command.Perms[Config.Framework]) do
@@ -291,7 +291,7 @@ function PermissionsCheck(source)
             end
         end
         return false
-    
+
     elseif Config.Framework == 'qbcore' then
         local perms = QBCore.Functions.GetPermission(source)
         for c, d in ipairs(Config.Command.Perms[Config.Framework]) do
@@ -309,7 +309,7 @@ function PermissionsCheck(source)
 
     elseif Config.Framework == 'vrp' then
         for c, d in pairs(Config.Command.Perms[Config.Framework]) do
-            if vRP.hasPermission({vRP.getUserId({source}), d}) then 
+            if vRP.hasPermission({vRP.getUserId({source}), d}) then
                 return true
             end
         end
@@ -334,7 +334,7 @@ function PermissionsCheck(source)
     elseif Config.Framework == 'other' then
         --Add your own permissions check here (boolean).
         return true
-        
+
     end
 end
 

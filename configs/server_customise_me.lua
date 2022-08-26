@@ -10,7 +10,7 @@ function Notification(source, notif_type, message)
     if source and notif_type and message then
         if Config.NotificationType.client == 'esx' then
             TriggerClientEvent('esx:showNotification', source, message)
-        
+
         elseif Config.NotificationType.client == 'qbcore' then
             if notif_type == 1 then
                 TriggerClientEvent('QBCore:Notify', source, message, 'success')
@@ -19,7 +19,7 @@ function Notification(source, notif_type, message)
             elseif notif_type == 3 then
                 TriggerClientEvent('QBCore:Notify', source, message, 'error')
             end
-        
+
         elseif Config.NotificationType.client == 'mythic_old' then
             if notif_type == 1 then
                 TriggerClientEvent('mythic_notify:client:SendAlert:custom', source, { type = 'success', text = message, length = 10000})

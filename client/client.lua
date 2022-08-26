@@ -1,7 +1,7 @@
 --███████╗██████╗  █████╗ ███╗   ███╗███████╗██╗    ██╗ ██████╗ ██████╗ ██╗  ██╗
 --██╔════╝██╔══██╗██╔══██╗████╗ ████║██╔════╝██║    ██║██╔═══██╗██╔══██╗██║ ██╔╝
---█████╗  ██████╔╝███████║██╔████╔██║█████╗  ██║ █╗ ██║██║   ██║██████╔╝█████╔╝ 
---██╔══╝  ██╔══██╗██╔══██║██║╚██╔╝██║██╔══╝  ██║███╗██║██║   ██║██╔══██╗██╔═██╗ 
+--█████╗  ██████╔╝███████║██╔████╔██║█████╗  ██║ █╗ ██║██║   ██║██████╔╝█████╔╝
+--██╔══╝  ██╔══██╗██╔══██║██║╚██╔╝██║██╔══╝  ██║███╗██║██║   ██║██╔══██╗██╔═██╗
 --██║     ██║  ██║██║  ██║██║ ╚═╝ ██║███████╗╚███╔███╔╝╚██████╔╝██║  ██║██║  ██╗
 --╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝ ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
 
@@ -26,7 +26,7 @@ Citizen.CreateThread(function()
         AddEventHandler('vSync:toggle', function(boolean)
             TriggerEvent('cd_easytime:PauseSync', boolean)
         end)
-    
+
     elseif Config.Framework == 'qbcore' then
         while QBCore == nil do
             TriggerEvent(Config.FrameworkTriggers.main, function(obj) QBCore = obj end)
@@ -51,7 +51,7 @@ Citizen.CreateThread(function()
         AddEventHandler('qb-weathersync:client:DisableSync', function()
             TriggerEvent('cd_easytime:PauseSync', false)
         end)
-    
+
     elseif Config.Framework == 'vrp' or Config.Framework == 'aceperms' or Config.Framework == 'identifiers' then
         Citizen.CreateThread(function()
             Wait(3000)
@@ -282,7 +282,7 @@ AddEventHandler('cd_easytime:ToggleNUIFocus', function()
     SetNuiFocusKeepInput(false)
     SetPlayerCanDoDriveBy(PlayerId(), true)
     local count, keys = 0, {177, 200, 202, 322}
-    while count < 100 do 
+    while count < 100 do
         Wait(0)
         count=count+1
         for c, d in pairs(keys) do
