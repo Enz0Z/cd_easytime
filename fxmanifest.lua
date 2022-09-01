@@ -1,8 +1,8 @@
 fx_version 'cerulean'
 game 'gta5'
-author 'Codesign#2715'
+author 'Codesign#2715, fork by Enz0Z'
 description 'Codesign Weather & Time Managment'
-version '1.3.6'
+repository 'https://github.com/Enz0Z/cd_easytime'
 
 shared_scripts {
     'configs/locales.lua',
